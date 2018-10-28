@@ -1,0 +1,51 @@
+body{
+    background-color: white;
+    border-left-width: medium;
+    width: 650px;
+    margin:auto;
+
+}
+h1{text-align: left;
+    font-weight: normal;
+    font-family: Calibri;
+    font-size: 20pt;
+
+}
+h2{
+    text-align: left;
+    font-weight: normal;
+    font-family: Calibri;
+    font-size: 11pt;
+
+}
+#foto{
+    float:right;
+    width:120px;
+
+
+}
+ul{
+    text-align: left;
+    font-weight: normal;
+    font-family: Calibri;
+    font-size: 11pt;
+
+}
+#name{
+    font-size: 14pt;
+    text-align: left;
+    font-weight: normal;
+    font-family: Calibri;
+
+
+}
+.persInf{
+    padding-left: 150px;
+
+}
+.info{
+    padding-left: 50px;
+    font-weight: normal;
+    font-family: Calibri;
+    font-size: 11pt;
+}

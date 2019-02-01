@@ -1,5 +1,13 @@
+<?php
+
+@session_start();
+require_once ("./functions/functions.php");
+$db=connect();
+
+?>
+
 <div id="mujRegister">
-    <form  action="index.php">
+    <form  action="" method="post">
         <div class="container">
 
             <label for="uname"><b>Username</b></label>
@@ -14,10 +22,7 @@
             <label for="repsw"><b>Re-enter Password</b></label>
             <input type="password" placeholder="Re-enter Password" name="repsw" required>
 
-            <label for="mail"><b>E-mail</b></label>
-            <input type="email" placeholder="Enter E-mail" name="mail" required>
-
-            <button type="submit" name="btnSubmitLogin">Register</button>
+            <button type="submit" name="btnSubmitRegistered">Register</button>
 
         </div>
 
@@ -26,7 +31,9 @@
 
         </div>
 
-
+        <?php
+        register();
+        ?>
 
 
 

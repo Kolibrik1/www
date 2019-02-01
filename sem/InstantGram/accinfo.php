@@ -1,15 +1,17 @@
 <?php
-    include "profileNav.php"
+include "profileNav.php";
+@session_start();
+require_once ("./functions/functions.php");
+
+$uname= $_SESSION["login"];
 ?>
+
 <div id="accountInfo">
-    <form method="post"   action="index.php">
+    <form method="post"   action="">
         <div class="container">
 
             <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Username" name="uname" >
-
-            <label for="mail"><b>E-mail</b></label>
-            <input type="email" placeholder="E-mail" name="mail" >
+            <input type="text" placeholder=<?php echo "$uname"?> name="uname" >
 
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Password" name="psw" >
@@ -18,7 +20,9 @@
 
         </div>
 
-
+        <?php
+        changeCredentials();
+        ?>
 
 
     </form>

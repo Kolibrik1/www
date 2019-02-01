@@ -1,6 +1,6 @@
 <footer>
-    <div class="full-width-wrapper">
-        <div class="flex-wrap">
+    <div class="myFooter">
+
             <section>
                 <h4>About</h4>
                 <p>InstantGram is a web dedicated to sharing
@@ -24,6 +24,6 @@
 
             </section>
 
-        </div>
+
     </div>
 </footer>

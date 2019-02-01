@@ -1,9 +1,18 @@
+<?php
 
+@session_start();
+
+require_once ("./functions/functions.php");
+$db=connect();
+
+
+
+?>
 
 
 
 <div id="mujLogin">
-<form method="post"   action="index.php">
+<form method="post"   action="">
     <div class="container">
 
         <label for="uname"><b>Username</b></label>
@@ -21,6 +30,9 @@
 
     </div>
 
+    <?php
+    login();
+    ?>
 
 
 </form>

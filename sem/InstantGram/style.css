@@ -1,8 +1,12 @@
 
 body, html {
-    height: 100%;
+    height:100%;
     margin: 0;
     background-color: white;
+
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
 }
 /*-----------------------------------HEADER------------------------------------------*/
 header{
@@ -13,11 +17,13 @@ header{
     position:fixed;
     top: 0;
     width: 100%;
+    z-index: 5;
+
 }
 #header-logo{
     height:40px;
     padding-top:5px;
-    margin-left:35%;
+    margin-left:30%;
     float: left;
     display: compact;
     color: black;
@@ -37,8 +43,8 @@ header{
 }
 
 
-#nav input[type=text] {
-    margin-left:20%;
+#nav form input[type=text] {
+    margin-left:5%;
     padding: 6px;
     border: none;
     margin-top: 8px;
@@ -67,35 +73,46 @@ header{
 #reg{
     margin-right:5%;
 }
+
+header form {
+
+    display: contents;
+}
+header form button{
+    height: 30px;
+
+
+    padding: 6px;
+
+    margin-top: 8px;
+    margin-right: 16px;
+
+}
 /*-----------------------------------FOOTER------------------------------------------*/
 
 
-.full-width-wrapper{
+.myFooter{
     width: 80%;
     margin: 0 auto;
-
-
-}
-
-
-.flex-wrap{
 
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    bottom: 0;
 }
+
+
 footer {
 
-    position: page;
+
 
     min-height: 100px;
-
-
-    bottom: 0;
-
+    clear: both;
+    bottom:-150px;
     width: 100%;
     background-color: #c5ff48;
     color: black;
+    position:absolute;
 
 }
 
@@ -203,29 +220,49 @@ footer h4 {
 
 }
 /*-----------------------------------PROFILENAV------------------------------------------*/
-#profileLeftColumn{
-    background-color: white;
-    min-height:80%;
-    padding-top: 8%;
-    padding-left: 5%;
-    margin-right: 80%;
+#profileNav{
+    background-color:  #9dff4b;
+    left:0;
+    right:0;
+    overflow: hidden;
+    margin-top:40px;
+    padding-left:30%;
+    width: 100%;
+
+    z-index: 4;
+
 
 }
-#profileLeftColumn a{
+
+#profileNav a{
 
 
     font-size: 17px;
     display:block;
-    margin-right:15px;
-    margin-top: 15px;
+    float:left;
+
     text-decoration: none;
     color:black;
-    background-color: #c5ff48;
+    background-color: #9dff4b;
     text-align: center;
-    padding: 14px 16px;
+    padding: 16px 16px;
+    margin-top:10px;
 }
-#profileLeftColumn a:hover{
-    opacity: 0.8;;
+
+
+#profileNav a:hover{
+    background-color: white ;
+}
+#profileName a {
+    font-size: 20px;
+    padding: 16px 0px;
+    margin-right: 10%;
+   font-weight: bold;
+}
+#profileName a:hover{
+    background-color: #9dff4b ;
+
+
 }
 /*-----------------------------------ACCINFO------------------------------------------*/
 
@@ -256,11 +293,11 @@ footer h4 {
     opacity: 0.8;
 }
 #accountInfo{
-
-    left:40%;
-    top:25%;
+    margin-top: 10%;
+    margin-bottom:10%;
+    margin-left:40%;
     width: 350px;
-    position: absolute;
+
 
 }
 /*-----------------------------------ALLIES------------------------------------------*/

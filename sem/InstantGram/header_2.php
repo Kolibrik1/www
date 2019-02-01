@@ -7,11 +7,13 @@
 
     <nav id="nav">
 
-
-        <input type="text" placeholder="Search user...">
+        <form class="searchBar" action="" method="get">
+            <input  type="text" placeholder="Search user..." name="search">
+            <button type="submit" >Search</button>
+        </form>
 
         <a href="<?= "?page=logout"?>">Logout</a>
-        <a href="<?= "?page=profileNav"?>">Profile</a>
+        <a href="<?= "?page=publicGallery"?>">Profile</a>
 
     </nav>
 </header>

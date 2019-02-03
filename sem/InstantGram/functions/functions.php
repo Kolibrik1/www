@@ -733,7 +733,9 @@ function pendingRequest()
 
     } else return false;
 }
-function breakAlliance(){
+
+function breakAlliance()
+{
     if (isset($_SESSION["login"]) && isset($_GET["allyRequest"])) {
         $db = connect();
         $myId = $_SESSION["id"];
@@ -757,6 +759,353 @@ function breakAlliance(){
         }
 
     }
+}
+
+function loadUsers()
+{
+
+    if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"]) {
+
+
+        $db = connect();
+
+        $sql = "SELECT * FROM user WHERE isAdmin!=1";
+        $result = $db->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+
+                $uname = $row["username"];
+                $date = $row["created"];
+                $id = $row["ID_user"];
+
+                $pathDelete = $_SERVER["REQUEST_URI"] . "&manageRequest=1&id=$id";
+                echo "<p>Username: $uname, created: $date  <a href='$pathDelete'>Delete user</a></p>";
+
+
+            }
+
+        } else {
+            echo "<p>No users found.</p>";
+        }
+    }
+}
+
+function deleteUser($userId)
+{
+
+    deleteAllComments($userId);
+    deleteAllApproves($userId);
+    deleteAllAlliances($userId);
+    deleteAllImages($userId);
+
+    $db = connect();
+
+
+    $path = "./user_galleries/" . $userId . "/";
+    rmdir($path);
+
+    $sql = "DELETE FROM user WHERE ID_user=? ";
+    if ($stmt = $db->prepare($sql)) {
+
+        $stmt->bind_param("i", $userId);
+        $stmt->execute();
+
+        header("Refresh:0");
+    }
+
+}
+
+function deleteAllImages($userId)
+{
+    $db = connect();
+    $sql = "SELECT * FROM image WHERE User_ID_user=$userId";
+
+    $result = $db->query($sql);
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $imageId = $row["ID_image"];
+
+            deleteImage($imageId);
+        }
+    }
+}
+
+function deleteApprovesCommentsOnImage($imageId)
+{
+    $db = connect();
+    $sql = "SELECT * FROM comment WHERE FK_Image=$imageId";
+
+    $result = $db->query($sql);
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $commentId = $row["ID_Comment"];
+
+            deleteComment($commentId);
+        }
+    }
+
+    $sql1 = "SELECT * FROM approve WHERE FK_Image=$imageId";
+
+    $result1 = $db->query($sql1);
+    if ($result1->num_rows > 0) {
+        while ($row1 = $result1->fetch_assoc()) {
+            $approverId = $row1["FK_Approver"];
+
+            deleteApprove($approverId, $imageId);
+        }
+    }
+
+
+}
+
+function deleteImage($imageId)
+{
+    deleteApprovesCommentsOnImage($imageId);
+
+    $db = connect();
+
+    $sql2 = "SELECT * FROM image WHERE ID_image=$imageId";
+    $result2 = $db->query($sql2);
+    if ($result2->num_rows > 0) {
+        while ($row2 = $result2->fetch_assoc()) {
+            $userId = $row2["User_ID_user"];
+            $fileType = $row2["fileType"];
+
+
+        }
+    }
+
+
+    $path = "./user_galleries/" . $userId . "/" . $imageId . $fileType;
+    unlink($path);
+
+    $sql = "DELETE FROM image WHERE ID_image=? ";
+    if ($stmt = $db->prepare($sql)) {
+
+        $stmt->bind_param("i", $imageId);
+        $stmt->execute();
+
+        header("Refresh:0");
+    }
+}
+
+function deleteAllComments($userId)
+{
+
+    $db = connect();
+    $sql = "SELECT * FROM comment WHERE FK_Commenter=$userId";
+
+    $result = $db->query($sql);
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $commentId = $row["ID_Comment"];
+
+            deleteComment($commentId);
+        }
+    }
+}
+
+function deleteComment($commentId)
+{
+    $db = connect();
+
+    $sql = "DELETE FROM comment WHERE ID_Comment=? ";
+    if ($stmt = $db->prepare($sql)) {
+
+        $stmt->bind_param("i", $commentId);
+        $stmt->execute();
+
+        header("Refresh:0");
+    }
+
+}
+
+
+function deleteAllApproves($userId)
+{
+
+    $db = connect();
+    $sql = "SELECT * FROM approve WHERE FK_Approver=$userId";
+
+    $result = $db->query($sql);
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $imageId = $row["FK_Image"];
+
+            deleteApprove($userId, $imageId);
+        }
+    }
+
+}
+
+function deleteApprove($userId, $imageId)
+{
+    $db = connect();
+
+    $sql = "DELETE FROM approve WHERE FK_Image=? &&  FK_Approver=?";
+    if ($stmt = $db->prepare($sql)) {
+
+        $stmt->bind_param("ii", $imageId, $userId);
+        $stmt->execute();
+
+        header("Refresh:0");
+    }
+}
+
+function deleteAllAlliances($userId)
+{
+    $db = connect();
+    $sql = "SELECT * FROM user_aliances WHERE ID_user_from=$userId";
+
+    $result = $db->query($sql);
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $otherUser = $row["ID_user_to"];
+
+            deleteAlliance($userId, $otherUser);
+        }
+    }
+
+    $sql2 = "SELECT * FROM user_aliances WHERE ID_user_to=$userId";
+
+    $result2 = $db->query($sql2);
+    if ($result2->num_rows > 0) {
+        while ($row2 = $result2->fetch_assoc()) {
+            $otherUser = $row2["ID_user_from"];
+
+            deleteAlliance($userId, $otherUser);
+        }
+    }
+}
+
+function deleteAlliance($userId, $otherUserId)
+{
+    $db = connect();
+
+
+    $sql = "DELETE FROM user_aliances WHERE ID_user_to=? &&  ID_user_from=?";
+    if ($stmt = $db->prepare($sql)) {
+
+        $stmt->bind_param("ii", $userId, $otherUserId);
+        $stmt->execute();
+
+
+    }
+
+    $sql2 = "DELETE FROM user_aliances WHERE ID_user_to=? &&  ID_user_from=?";
+    if ($stmt2 = $db->prepare($sql2)) {
+
+        $stmt2->bind_param("ii", $otherUserId, $userId);
+        $stmt2->execute();
+
+        header("Refresh:0");
+    }
+
+}
+
+function commentsToJson($imageId)
+{
+    echo "fnaofaoiafinofa";
+
+    $db = connect();
+    $sql = "SELECT * FROM comment JOIN user ON FK_Commenter=ID_user WHERE FK_Image=$imageId";
+
+    $response = array();
+    $posts = array();
+
+    $result = $db->query($sql);
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $uname = $row["username"];
+            $added = $row["added"];
+            $text = $row["text"];
+
+            $posts[] = array('uname' => $uname, 'added' => $added, 'text' => $text);
+        }
+    } else return;
+    $response['posts'] = $posts;
+
+    $path = "./export_JSON/results.json";
+
+    $fp = fopen($path, 'w');
+    fwrite($fp, json_encode($response));
+    fclose($fp);
+
+    if (file_exists($path)) {
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        header('Content-Disposition: attachment; filename=' . basename($path));
+        header('Content-Transfer-Encoding: binary');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        header('Pragma: public');
+        header('Content-Length: ' . filesize($path));
+        ob_clean();
+        flush();
+        readfile($path);
+        unlink($path);
+        exit;
+    }
+
+
+}
+
+function importUsers()
+{
+    $db = connect();
+
+
+    if (isset($_POST["submitJson"])) {
+
+
+        $target_dir = "./import_JSON/";
+
+
+        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+        $uploadOk = 1;
+        $jsonFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+
+// Allow certain file formats
+        if ($jsonFileType != "json") {
+
+            $uploadOk = 0;
+        }
+
+        if ($uploadOk == 0) {
+            echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+        } else {
+
+            $target_file = $target_dir . "input." . $jsonFileType;
+        }
+
+
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            $jsonData = file_get_contents($target_file);
+            $obj = json_decode($jsonData, true);
+
+            foreach ($obj as $array => $v) {
+                $uname = $v["uname"];
+                $psw = $v["psw"];
+                $isAdmin = $v["isAdmin"];
+                $date = date('Y-m-d H:i:s');
+
+                $sql = "INSERT INTO user (username, password, created,isAdmin) VALUES (?,?,?,?)";
+                if ($stmt = $db->prepare($sql)) {
+                    $stmt->bind_param("sssi", $uname, $psw, $date, $isAdmin);
+                    $stmt->execute();
+                }
+            }
+
+
+            echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    }
+
+
 }
 
 

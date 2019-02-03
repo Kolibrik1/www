@@ -1,0 +1,507 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color: white;
+
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*-----------------------------------HEADER------------------------------------------*/
+header {
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    background-color: #c5ff48;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+
+}
+
+#header-logo {
+    height: 40px;
+    padding-top: 5px;
+    margin-left: 30%;
+    float: left;
+    display: compact;
+    color: black;
+    text-align: center;
+
+    text-decoration: none;
+    font-size: 17px;
+}
+
+#header-web-title {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+#nav form input[type=text] {
+    margin-left: 5%;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+}
+
+#nav a {
+
+    float: right;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+}
+
+#nav a:hover {
+    background-color: white;
+    color: black;
+
+}
+
+#nav a:active {
+    background-color: white;
+}
+
+#reg {
+    margin-right: 5%;
+}
+
+header form {
+
+    display: contents;
+}
+
+header form button {
+    height: 30px;
+
+    padding: 6px;
+
+    margin-top: 8px;
+    margin-right: 16px;
+
+}
+
+/*-----------------------------------FOOTER------------------------------------------*/
+
+.myFooter {
+    width: 80%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    bottom: 0;
+}
+
+footer {
+
+    min-height: 100px;
+    clear: both;
+    bottom: -150px;
+    width: 100%;
+    background-color: #c5ff48;
+    color: black;
+    position: inherit;
+
+}
+
+footer section {
+    width: 30%;
+
+}
+
+footer h4 {
+    color: black;
+    text-decoration: underline;
+}
+
+/*-----------------------------------HERO------------------------------------------*/
+
+#hero {
+    height: 100%;
+    background: url("../images/hero_2.jpg") no-repeat center;
+    background-size: contain;
+    position: inherit;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/*-----------------------------------LOGIN------------------------------------------*/
+
+#mujLogin form {
+    border: 3px solid #aaaaaa;
+    background-color: white;
+}
+
+#mujLogin input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #aaaaaa;
+    box-sizing: border-box;
+}
+
+#mujLogin button {
+    background-color: #c5ff48;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#mujLogin button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.container {
+    padding: 16px;
+}
+
+#mujLogin {
+
+    left: 40%;
+    top: 25%;
+    width: 350px;
+    position: absolute;
+
+}
+
+/*-----------------------------------REGISTER------------------------------------------*/
+
+#mujRegister form {
+    border: 3px solid #aaaaaa;
+    background-color: white;
+}
+
+#mujRegister input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #aaaaaa;
+    box-sizing: border-box;
+}
+
+#mujRegister button {
+    background-color: #c5ff48;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#mujRegister button:hover {
+    opacity: 0.8;
+}
+
+#mujRegister {
+
+    left: 40%;
+    top: 25%;
+    width: 350px;
+    position: absolute;
+
+}
+
+/*-----------------------------------PROFILENAV------------------------------------------*/
+#profileNav {
+    background-color: #9dff4b;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    margin-top: 40px;
+    padding-left: 30%;
+    width: 70%;
+
+    z-index: 4;
+
+}
+
+#profileNav a {
+
+    font-size: 17px;
+    display: block;
+    float: left;
+
+    text-decoration: none;
+    color: black;
+    background-color: #9dff4b;
+    text-align: center;
+    padding: 16px 16px;
+    margin-top: 10px;
+}
+
+#profileNav a:hover {
+    background-color: white;
+}
+
+#profileNav a:active {
+    background-color: white;
+}
+
+#profileName a {
+    font-size: 20px;
+    padding: 16px 0px;
+    margin-right: 10%;
+    font-weight: bold;
+}
+
+#profileName a:hover {
+    background-color: #9dff4b;
+
+}
+
+/*-----------------------------------ACCINFO------------------------------------------*/
+
+#accountInfo form {
+    border: 3px solid #aaaaaa;
+    background-color: white;
+}
+
+#accountInfo input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #aaaaaa;
+    box-sizing: border-box;
+}
+
+#accountInfo button {
+    background-color: #c5ff48;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#accountInfo button:hover {
+    opacity: 0.8;
+}
+
+#accountInfo {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 40%;
+    width: 350px;
+    min-height: 50%;
+
+}
+
+/*-----------------------------------ALLIES------------------------------------------*/
+#allies {
+    min-height: 100%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 10%;
+    margin-top: 2%;
+
+    border: 1px solid #aaaaaa;
+    background-color: white;
+}
+
+#allies p {
+    font-size: 18px;
+    width: 98%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-top: 3px;
+    padding-bot: 3px;
+    padding-right: 3px;
+    padding-left: 3px;
+    border: 1px solid black;
+    background-color: #c5ff48;
+}
+
+#allies a {
+    float: right;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+}
+
+#allies a:hover {
+    background-color: white;
+}
+
+/*-----------------------------------GALLERY------------------------------------------*/
+#gallery {
+    min-height: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+    margin-top: 2%;
+
+    border: 3px solid #aaaaaa;
+    background-color: white;
+}
+
+#uploadPicture {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 40%;
+}
+
+#galleryPicture {
+    width: 23%;
+    height: 300px;
+    margin: 10px 10px 10px 10px;
+    border: 3px solid black;
+}
+
+/*-----------------------------------IMAGE DETAIL------------------------------------------*/
+#pictureDetail {
+
+}
+
+#pictureDetail img {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#likeCounter, #deleteImage {
+    margin-left: 45%;
+    margin-bottom: 5px;
+
+}
+
+#likeCounter p {
+    margin-top: 0;
+    margin-bot: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#likeCounter buttom, p {
+    float: left;
+}
+
+#likeCounter buttom {
+    width: 20px;
+}
+
+#description {
+    margin-left: 10%;
+    margin-right: 20%;
+    width: 50%;
+    height: 20%;
+    display: flow;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+#comments {
+    width: 50%;
+    margin-left: 10%;
+}
+
+#comments p {
+    width: 100%;
+    border: 3px solid grey;
+
+}
+
+#writeComment {
+
+    margin-left: 10%;
+    position: relative;
+}
+
+#writeComment textarea {
+    width: 50%;
+    resize: none;
+}
+
+#description textarea {
+    width: 90%;
+    resize: none;
+}
+
+/*-----------------------------------MANAGE USERS------------------------------------------*/
+
+#manageUsers {
+    min-height: 90%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+    margin-top: 2%;
+
+    border: 3px solid #aaaaaa;
+    background-color: white;
+}
+
+#manageUsers p {
+    font-size: 18px;
+    width: 98%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-top: 3px;
+    padding-bot: 3px;
+    padding-right: 3px;
+    padding-left: 3px;
+    border: 1px solid black;
+    background-color: #c5ff48;
+}
+
+#manageUsers a {
+    float: right;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+}
+
+#manageUsers a:hover {
+    background-color: white;
+}
+
+#uploadJson {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 40%;
+}
+
+
+

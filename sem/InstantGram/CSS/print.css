@@ -1,0 +1,46 @@
+header {
+    display: none;
+
+}
+
+footer {
+    display: none;
+}
+
+#profileNav {
+    display: none;
+}
+
+#profileNav2 {
+    display: none;
+
+}
+
+#pictureDetail img{
+    margin-top:10%;
+    margin-left:5%;
+    margin-right:5%;
+    width:100%;
+}
+#pictureDetail button {
+    display: none;
+}
+
+#likeCounter {
+
+
+}
+
+#description {
+    display: none;
+
+}
+
+#writeComment {
+    display: none;
+}
+
+#comments {
+    display: none;
+
+}

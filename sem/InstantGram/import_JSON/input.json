@@ -1,0 +1,27 @@
+[
+    {
+      "uname": "Jakub",
+      "psw": "$2y$10$FItdrH.CIGUxu2tz6gLQj.lgKwWgJetVqOW5qRGlqR2GW/MBaHSm.",
+      "isAdmin": 0
+    },
+    {
+      "uname": "Honza",
+      "psw": "$2y$10$isEJ1qhoT42c6bpgwdd5n.M43.ZPaD/tmyqEPfGiBxqL1y7uQZsuG",
+      "isAdmin": 0
+    },
+    {
+      "uname": "Krista",
+      "psw": "$2y$10$cMZA3TonRftjhrvUTTQ9HuvCiTa.AipPIKOFfZ7yyGS5m0FsWGOSy",
+      "isAdmin": 0
+    },
+    {
+      "uname": "Pavel",
+      "psw": "$2y$10$Aud3f1UnC53cQFeiZSOnzeITPI7qPrUSXlgLatTJYR9mxGFgAMHte",
+      "isAdmin": 0
+    },
+    {
+      "uname": "Roman",
+      "psw": "$2y$10$Q7e/YVGOrPFkrozV3rfsEucXW69hM89QW4rNpcEr8BB.qQc5XUC7e",
+      "isAdmin": 1
+    }
+]

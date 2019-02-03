@@ -183,13 +183,26 @@ footer h4 {
     padding: 16px;
 }
 
-#mujLogin {
+@media (min-width: 800px) {
+    #mujLogin {
 
-    left: 40%;
-    top: 25%;
-    width: 350px;
-    position: absolute;
+        left: 40%;
+        top: 25%;
+        width: 350px;
+        position: absolute;
 
+    }
+}
+
+@media (max-width: 800px) {
+    #mujLogin {
+
+        left: 20%;
+        top: 25%;
+        width: 350px;
+        position: absolute;
+
+    }
 }
 
 /*-----------------------------------REGISTER------------------------------------------*/
@@ -222,22 +235,36 @@ footer h4 {
     opacity: 0.8;
 }
 
-#mujRegister {
+@media (min-width: 800px) {
+    #mujRegister {
 
-    left: 40%;
-    top: 25%;
-    width: 350px;
-    position: absolute;
+        left: 40%;
+        top: 25%;
+        width: 350px;
+        position: absolute;
 
+    }
+}
+
+@media (max-width: 800px) {
+    #mujRegister {
+
+        left: 20%;
+        top: 25%;
+        width: 350px;
+        position: absolute;
+
+    }
 }
 
 /*-----------------------------------PROFILENAV------------------------------------------*/
+
 #profileNav {
     background-color: #9dff4b;
     left: 0;
     right: 0;
     overflow: hidden;
-    margin-top: 40px;
+    margin-top: 120px;
     padding-left: 30%;
     width: 70%;
 
@@ -279,6 +306,18 @@ footer h4 {
 
 }
 
+@media (min-width: 520px) {
+    #profileNav {
+        margin-top: 80px;
+    }
+}
+
+@media (min-width: 1000px) {
+    #profileNav {
+        margin-top: 40px;
+    }
+}
+
 /*-----------------------------------ACCINFO------------------------------------------*/
 
 #accountInfo form {
@@ -316,6 +355,28 @@ footer h4 {
     width: 350px;
     min-height: 50%;
 
+}
+
+@media (min-width: 800px) {
+    #accountInfo {
+        margin-top: 10%;
+        margin-bottom: 10%;
+        margin-left: 40%;
+        width: 350px;
+        min-height: 50%;
+
+    }
+}
+
+@media (max-width: 800px) {
+    #accountInfo {
+        margin-top: 10%;
+        margin-bottom: 10%;
+        margin-left: 20%;
+        width: 350px;
+        min-height: 50%;
+
+    }
 }
 
 /*-----------------------------------ALLIES------------------------------------------*/
@@ -378,22 +439,65 @@ footer h4 {
 }
 
 #galleryPicture {
-    width: 23%;
+    width: 90%;
     height: 300px;
     margin: 10px 10px 10px 10px;
     border: 3px solid black;
 }
 
-/*-----------------------------------IMAGE DETAIL------------------------------------------*/
-#pictureDetail {
-
+@media (min-width: 750px) {
+    #galleryPicture {
+        width: 45%;
+        height: 300px;
+        margin: 10px 10px 10px 10px;
+        border: 3px solid black;
+    }
 }
 
+@media (min-width: 1200px) {
+    #galleryPicture {
+        width: 30%;
+        height: 300px;
+        margin: 10px 10px 10px 10px;
+        border: 3px solid black;
+    }
+}
+
+@media (min-width: 1840px) {
+    #galleryPicture {
+        width: 23%;
+        height: 300px;
+        margin: 10px 10px 10px 10px;
+        border: 3px solid black;
+    }
+}
+
+/*-----------------------------------IMAGE DETAIL------------------------------------------*/
+
 #pictureDetail img {
-    width: 50%;
-    margin-left: 25%;
+    width: 80%;
+    margin-left: 10%;
     margin-top: 2%;
     margin-bottom: 2%;
+}
+
+
+@media (min-width: 1000px) {
+    #pictureDetail img {
+        width: 60%;
+        margin-left: 20%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+}
+
+@media (min-width: 1600px) {
+    #pictureDetail img {
+        width: 50%;
+        margin-left: 25%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
 }
 
 #likeCounter, #deleteImage {

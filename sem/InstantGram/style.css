@@ -112,7 +112,7 @@ footer {
     width: 100%;
     background-color: #c5ff48;
     color: black;
-    position:absolute;
+    position:inherit;
 
 }
 
@@ -227,7 +227,7 @@ footer h4 {
     overflow: hidden;
     margin-top:40px;
     padding-left:30%;
-    width: 100%;
+    width: 70%;
 
     z-index: 4;
 
@@ -253,6 +253,10 @@ footer h4 {
 #profileNav a:hover{
     background-color: white ;
 }
+#profileNav a:active{
+    background-color: white;
+}
+
 #profileName a {
     font-size: 20px;
     padding: 16px 0px;
@@ -297,39 +301,136 @@ footer h4 {
     margin-bottom:10%;
     margin-left:40%;
     width: 350px;
+    min-height: 50%;
 
 
 }
 /*-----------------------------------ALLIES------------------------------------------*/
 #allies{
-    left:30%;
-    top:15%;
-    width: 50%;
-    height: 80%;
-    position: absolute;
-    border: 3px solid #aaaaaa;
+    min-height: 100%;
+    margin-left:20%;
+    margin-right:20%;
+    margin-bottom:10%;
+    margin-top:2%;
+
+    border: 1px solid #aaaaaa;
+    background-color: white;
+}
+
+#allies p{
+    font-size: 18px;
+    width:98%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left:5px;
+    margin-right:5px;
+    padding-top:3px;
+    padding-bot:3px;
+    padding-right:3px;
+    padding-left:3px;
+    border:1px solid black;
+    background-color: #c5ff48;
+}
+#allies a{
+    float: right;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px ;
+    text-decoration: none;
+
+
+}
+#allies a:hover{
     background-color: white;
 }
 /*-----------------------------------GALLERY------------------------------------------*/
 #gallery{
-    left:30%;
-    top:15%;
-    width: 50%;
-    height: 80%;
-    position: absolute;
+    min-height: 100%;
+    margin-left:10%;
+    margin-right:10%;
+    margin-bottom:10%;
+    margin-top:2%;
+
     border: 3px solid #aaaaaa;
-    background-color: white;
+    background-color: lightgray;
 }
-#gallery button{
-    background-color: #c5ff48;
-    color: black;
-    padding: 14px 20px;
-    margin: 8px 0;
-    margin-left: 60px;
-    border: none;
-    cursor: pointer;
-    width: 40%;
+
+
+#uploadPicture{
+    margin-bottom:10px;
+    margin-top:10px;
+    margin-left:40%;
 }
-#gallery button:hover {
-    opacity: 0.8;
+#galleryPicture{
+    width: 23%;
+    height:300px;
+    margin: 10px 10px 10px 10px;
+    border: 3px solid black;
 }
+/*-----------------------------------IMAGE DETAIL------------------------------------------*/
+#pictureDetail{
+
+}
+#pictureDetail img{
+    width: 50%;
+    margin-left:25%;
+    margin-top:2%;
+    margin-bottom:2%;
+}
+#likeCounter{
+    margin-left:45%;
+
+}
+#likeCounter p{
+    margin-top:0;
+    margin-bot:0;
+    margin-left:5px;
+    margin-right:5px;
+}
+#likeCounter buttom,p{
+    float:left;
+}
+#likeCounter buttom{
+   width:20px;
+}
+#description {
+    margin-left:10%;
+    margin-right:20%;
+    width:50%;
+    height: 20%;
+    display: flow;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+#comments{
+ width:50%;
+    margin-left:10%;
+}
+#comments p{
+    width:100%;
+    border: 3px solid grey;
+
+}
+
+#writeComment{
+
+    margin-left:10%;
+    position: relative;
+}
+#writeComment textarea{
+    width:50%;
+    resize:none;
+}
+#description textarea{
+    width:90%;
+    resize:none;
+}
+
+
+
+
+
+
+

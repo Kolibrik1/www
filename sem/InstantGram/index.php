@@ -7,27 +7,17 @@
     <title>InstantGram | We're having a party tonight!</title>
 </head>
 
-
-
-
 <body>
-
-
 
 <?php
 require_once ("./functions/functions.php");
 indexRedirect();
 ?>
 
-
-
 <?php
 include "footer.php";
 ?>
 
-
-
 </body>
-
 
 </html>
